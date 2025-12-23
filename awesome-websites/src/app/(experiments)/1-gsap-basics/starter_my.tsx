@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import { useEffect } from "react";
 // testing library
-// hello
+
 
 export default function Page() {
 
