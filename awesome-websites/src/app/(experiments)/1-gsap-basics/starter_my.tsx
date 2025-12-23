@@ -13,6 +13,10 @@ export default function Page() {
             gsap.to(".title", {
             x: -200,
             duration: 10,
+            });
+            gsap.from(".title", {
+            x: -200,
+            duration: 10,
          });
             }, containrRef)
             
