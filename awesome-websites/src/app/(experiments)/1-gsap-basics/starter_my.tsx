@@ -6,8 +6,9 @@ import { useEffect } from "react";
 export default function Page() {
 
     useEffect(() => {
-        gsap.fromTo(".title", {
+        const tween = gsap.fromTo(".title", {
             x: -200,
+            duration: 10,
         }, {
             x: 200,
             onUpdate: () => {
@@ -15,7 +16,7 @@ export default function Page() {
             }
         });
         return () => {
-
+            tween.revert();
         }
     }, [])
 
