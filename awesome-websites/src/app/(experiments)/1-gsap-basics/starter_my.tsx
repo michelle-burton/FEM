@@ -1,7 +1,6 @@
 "use client";
 import gsap from "gsap";
 import { useEffect } from "react";
-// testing library
 
 
 export default function Page() {
