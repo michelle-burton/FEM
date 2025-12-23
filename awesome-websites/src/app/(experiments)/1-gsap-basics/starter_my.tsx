@@ -1,29 +1,33 @@
 "use client";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 
 export default function Page() {
 
+    const containrRef = useRef<HTMLDivElement>(null)
+
     useEffect(() => {
-        const tween = gsap.fromTo(".title", {
+     
+        const ctx = gsap.context(() => {
+            gsap.to(".title", {
             x: -200,
             duration: 10,
-        }, {
-            x: 200,
-            onUpdate: () => {
-                console.log("ran");
-            }
-        });
+         });
+            }, containrRef)
+            
+       
         return () => {
-            tween.revert();
+            // cleanup
+            ctx.revert();
         }
     }, [])
 
   return (
-    <div className="bg-blue-300 text-black">
-      <div className="flex h-screen items-end justify-left overflow-hidden">
-        <h1 className="title font-black text-[min(20rem,30vw)] leading-none pb-[0.1em] text-left">
+      <div className="bg-blue-300 text-black">
+          <p className="title">Hello</p>
+          <div ref={containrRef} className="flex h-screen items-end justify-left overflow-hidden">
+        <h1  className="title font-black text-[min(20rem,30vw)] leading-none pb-[0.1em] text-left">
           GSAP
           <br />
           tweens
