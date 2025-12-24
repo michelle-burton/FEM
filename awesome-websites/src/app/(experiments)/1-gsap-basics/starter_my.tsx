@@ -28,7 +28,12 @@ export default function Page() {
     //     }
     // }, [])
 
-    useGSAP(() => {}, {})
+    useGSAP(() => {
+        gsap.to(".title", {
+            x: -200,
+            duration: 10,
+        });
+    }, {})
 
   return (
       <div className="bg-blue-300 text-black">
