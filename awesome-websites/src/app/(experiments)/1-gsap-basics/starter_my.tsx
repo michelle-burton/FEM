@@ -8,32 +8,32 @@ export default function Page() {
 
     const containrRef = useRef<HTMLDivElement>(null)
 
-    // useEffect(() => {
+    useEffect(() => {
      
-    //     const ctx = gsap.context(() => {
-    //         gsap.to(".title", {
-    //         x: -200,
-    //         duration: 10,
-    //         });
-    //         gsap.from(".title", {
-    //         x: -200,
-    //         duration: 10,
-    //      });
-    //         }, containrRef)
+        const ctx = gsap.context(() => {
+            gsap.to(".title", {
+            x: -200,
+            duration: 10,
+            });
+            gsap.from(".title", {
+            x: -200,
+            duration: 10,
+         });
+            }, containrRef)
             
        
-    //     return () => {
-    //         // cleanup
-    //         ctx.revert();
-    //     }
-    // }, [])
+        return () => {
+            // cleanup
+            ctx.revert();
+        }
+    }, [])
 
-    // useGSAP(() => {
-    //     gsap.to(".title", {
-    //         x: -200,
-    //         duration: 10,
-    //     });
-    // }, {})
+    useGSAP(() => {
+        gsap.to(".title", {
+            x: -200,
+            duration: 10,
+        });
+    }, {})
 
   return (
       <div className="bg-blue-300 text-black">
